@@ -153,13 +153,20 @@ try{
             })
             let data = await response.json()
             console.log(data)
+if(data.message){
+    alert("plase fill the data");
+}
+else{
+    alert("signup success");
+    window.location.href = "login.html";
+}
+
+
             // alert("Registration Complete, Please LogIn to Explore")
             // mod.style.visibility = "hidden";
         } catch(err){
             console.log(err.message)
         }
-
-
     var userData = {
       emailAdd: email,
       password: pass,
@@ -168,57 +175,9 @@ try{
     };
 
     userStack.push(userData);
-
-    //console.log(userStack);
-    // localStorage.setItem("userDataBase", JSON.stringify(userStack));
-    alert("signup success");
-    window.location.href = "login.html";
+    // alert("signup success");
+    // window.location.href = "login.html";
   }
-
-
-
-
-// const form = document.getElementById("form");
-//     form.addEventListener("submit", registerUser)
-
-//   async  function registerUser(event) {
-//         event.preventDefault();
-
-
-//       var  name = document.querySelector("#usr").value;
-//         var phone_no = document.querySelector("#mbl").value;
-//        var email =  document.querySelector("#email").value;
-//    var    password = document.querySelector("#pass").value;
-//         // var firstName = document.querySelector("#First").value;
-//         // var lastName = document.querySelector("#last").value;
-//         // var email = document.querySelector("#email").value;
-//         // var password = document.querySelector("#password").value;
-
-//        const result = await fetch("http://localhost:5000/register" ,{
-//            method:"POST",
-//            headers:{
-//                "Content-Type":"application/json",
-//            },
-//            body:JSON.stringify({
-//             name,
-//             phone_no,
-//                email,
-//                password
-//            })
-//        }).then((res)=> res.json())
-//        console.log(result)
-//     //    if(email && password && firstName && lastName == null){
-//     //        console.log("please fill the inputs")
-//     //    }
-//        if(result.status === "ok"){
-//            alert("success")
-//            window.location.href="signin.html"
-//        }else{
-//         //    alert(result.error())
-//         alert("email should be unique")
-//        }
-//     }
-
     
     
 </script>
